@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+/* Paleta "oscuro cálido" (carbón, no negro puro) + acento ámbar/mostaza —
+   ver CLAUDE.md "Dirección de diseño". Esta es la base de Fase 0/1; el
+   ajuste fino de tonos/contraste/escala tipográfica es Fase 2. */
+:root {
+  --background: #1b1613;
+  --background-elevated: #241d18;
+  --foreground: #f2ece1;
+  --foreground-muted: #b8ada0;
+  --accent: #e0a63f;
+  --accent-foreground: #1b1613;
+  --border: #3a322b;
+}
+
+:root[data-theme="light"] {
+  --background: #f7f2e7;
+  --background-elevated: #ffffff;
+  --foreground: #241f1a;
+  --foreground-muted: #6b5f52;
+  --accent: #b45309;
+  --accent-foreground: #fffaf0;
+  --border: #e4dcc9;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-background-elevated: var(--background-elevated);
+  --color-foreground: var(--foreground);
+  --color-foreground-muted: var(--foreground-muted);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-border: var(--border);
+  --font-sans: var(--font-body);
+  --font-serif: var(--font-heading);
+}
+
+/* Toggle manual de movimiento (además de prefers-reduced-motion del SO,
+   ya cubierto por <MotionConfig> de framer-motion en motion-provider.tsx).
+   Cubre cualquier transición/animación CSS "a mano" que se sume en Fase 5. */
+[data-motion="reduced"] *,
+[data-motion="reduced"] *::before,
+[data-motion="reduced"] *::after {
+  animation-duration: 0.001ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.001ms !important;
+  scroll-behavior: auto !important;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
