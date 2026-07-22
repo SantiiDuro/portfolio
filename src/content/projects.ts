@@ -5,8 +5,6 @@
 //
 // TODO abiertos (no inventar, confirmar con Santiago):
 // - Smart Home: falta el aprendizaje ([COMPLETAR] en el draft).
-// - repoUrl por proyecto: el draft solo da el GitHub de perfil, no repos
-//   individuales — dejar null hasta confirmar, no inventar una URL.
 // - Ningún proyecto tiene demo en vivo hoy (hasLiveDemo: false para ambos).
 
 export interface ProjectContent {
@@ -41,7 +39,7 @@ export const projects: Project[] = [
     year: "2024",
     team: "Equipo de 3",
     stack: [".NET Core 8", "Angular SPA", "SQL Server", "Entity Framework", "Docker"],
-    repoUrl: null,
+    repoUrl: "https://github.com/SantiiDuro/smarthome-fullstack-app",
     hasLiveDemo: false,
     content: {
       es: {
@@ -80,7 +78,7 @@ export const projects: Project[] = [
     year: "2025",
     team: "Equipo de 3",
     stack: [".NET Core 8", "Angular SPA", "SQL Server", "Entity Framework"],
-    repoUrl: null,
+    repoUrl: "https://github.com/SantiiDuro/oop-simulator-fullstack",
     hasLiveDemo: false,
     content: {
       es: {
